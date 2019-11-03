@@ -8,9 +8,20 @@
 
 import SwiftUI
 
+let apiUrl = "https://api.letsbuildthatapp.com/static/courses.json"
+ 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, World!")
+        NavigationView {
+            ScrollView {
+                Text("Hello")
+            }.navigationBarTitle("Courses")
+                .navigationBarItems(trailing: Button(action: {
+                    print("Fetching json")
+                }, label: {
+                    Text("Fetch Courses")
+                }))
+        }
     }
 }
 
